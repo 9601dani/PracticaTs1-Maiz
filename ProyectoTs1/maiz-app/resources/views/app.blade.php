@@ -8,15 +8,15 @@
     <link rel="stylesheet" href="{{ asset('css/estiloMain.css') }}">
     <title>App Maiz</title>  
 </head>
-<body id="p2">
+<body>
 <header>
-    <nav id="p3">
-    <h1> El Maiz</h1>
+    <nav id="p2">
+    <h1> <a href="/">El Maiz</a></h1>
         <ul>
             <li><a href="/login">Login</a></li>
-            <li><a href="/saludos">Inicio</a></li>
-            <li><a href="contact.asp">Contacto</a></li>
-            <li><a href="about.asp">Sobre Pagina</a></li>
+            <li><a href="/inicio">Mas Info</a></li>
+            <li><a href="/contacto">Contacto</a></li>
+            <li><a href="">Sobre Pagina</a></li>
         </ul>
     </nav>
     @yield('content')
