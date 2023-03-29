@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,7 @@ Route::get('/inicio', function () {
 Route::get('/contacto', function () {
     return view('contact');
 });
+Route::get('/admin', function () {
+    return view('admin');
+});
+Route::post('/admin', [LoginController:: class, 'store'])->name('save');

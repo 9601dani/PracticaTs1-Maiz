@@ -16,7 +16,7 @@
             <li><a href="/login">Login</a></li>
             <li><a href="/inicio">Mas Info</a></li>
             <li><a href="/contacto">Contacto</a></li>
-            <li><a href="">Sobre Pagina</a></li>
+            <li><a href="/admin">Sobre Pagina</a></li>
         </ul>
     </nav>
     @yield('content')
