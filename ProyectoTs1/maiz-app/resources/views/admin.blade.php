@@ -3,42 +3,15 @@
 <head>
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 </head>
-<br>
 <div>
-    menu de admin
-</div>
-<br>
-<br>
-<div class="contenedor">
-    <form action="{{ route('save') }} " method="POST">
-        <div>
-            @csrf
-            @if(session('success'))
-                <h6> {{ session('seccess') }}</h6>
-            @endif
-            
-            @error('username')
-            <h6> {{ $message }} </h6>
-            @enderror
-
-            @error('password')
-            <h6> {{ $message }} </h6>
-            @enderror
-
-            <div class="columna">
-                <label for="titlle"> Username</label>
-                <input type="text" name="username" class="form-control">
-            </div>
-            <div class="columna">
-                <label for="password"> Password</label>
-                <input type="text" name="password" class="form-control">
-            </div>
-            <br>
-            
-        </div>
-        <div style="text-align:center" >
-                <button class="button" type="submit" > Crear Usuario</button>
-        </div>
-    </form>
+    <nav id="p4">
+    <h1> <a href="/admin">Bienvenido name</a></h1>
+        <ul>
+            <li><a href="/admin_create">Crear Usuario</a></li>
+            <li><a href="/admin_edit">Editar Usuario</a></li>
+            <li><a href="/">Cerrar Sesion</a></li>
+        </ul>
+    </nav>
+    @yield('content_admin')
 </div>
 @endsection

@@ -97,4 +97,6 @@ form {
 			width: 175px;
 			height: 35px;
   }
-  
+  table, th, td {
+    border: 1px solid;
+  }

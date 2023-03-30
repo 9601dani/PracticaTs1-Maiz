@@ -15,7 +15,7 @@ use App\Http\Controllers\LoginController;
 */
 
 Route::get('/', function () {
-    return view('app');
+    return view('main');
 });
 Route::get('/login', function () {
     return view('login');
@@ -30,4 +30,16 @@ Route::get('/contacto', function () {
 Route::get('/admin', function () {
     return view('admin');
 });
-Route::post('/admin', [LoginController:: class, 'store'])->name('save');
+Route::get('/admin_create', [LoginController:: class, 'index'])->name('admin');
+Route::post('/admin_create', [LoginController:: class, 'store'])->name('save');
+
+Route::patch('/admin_create', [LoginController:: class, 'store'])->name('user-edit');
+Route::delete('/admin_create', [LoginController:: class, 'index'])->name('user-destroy');
+
+
+Route::get('/admin_edit', function () {
+    return view('admin_edit');
+});
+Route::get('/main', function () {
+    return view('main');
+});

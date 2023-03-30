@@ -29,4 +29,10 @@ class LoginController extends Controller
         return redirect()-> route('save')-> with('success','Usuario creado correctamente');
 
      }
+
+     public function index(){
+      print("entre al metodo index");
+      $logins = Login::all();
+      return view('admin_create', ['logins'=> $logins]);
+     }
 }
