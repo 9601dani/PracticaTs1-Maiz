@@ -26,6 +26,14 @@
                     <label for="password"> Password</label>
                     <input type="text" name="password" class="form-control">
                 </div>
+                <div class="columna">
+                    <label for="titlle"> Name</label>
+                    <input type="text" name="name" class="form-control">
+                </div>
+                <div class="columna">
+                    <label for="email"> Email</label>
+                    <input type="text" name="email" class="form-control">
+                </div>
                 <br>
 
             </div>
@@ -36,15 +44,17 @@
         <div>
             <table>
                 <tr>
-                    <th>Id User</th>
                     <th>Name User</th>
+                    <th>Name</th>
+                    <th>Email</th>
                 </tr>
                 @foreach ( $logins as $login )
                 <div>
                     <a href="{{ route('user-edit', ['id'=> $login->id]) }}"></a>
                     <tr>
-                        <th>{{ $login-> id }}</th>
                         <th>{{ $login-> username }}</th>
+                        <th>{{ $login-> name }}</th>
+                        <th>{{ $login-> email }}</th>
                         <th>
                             <form action="{{ route ('user-destroy', [$login-> id]) }}" method="POST">
                                 @method('DELETE')

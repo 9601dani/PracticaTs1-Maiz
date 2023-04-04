@@ -19,11 +19,15 @@ class LoginController extends Controller
        $validateData= $request->validate([
             'username' => 'required|string',
             'password'=> 'required',
+            'name' => 'required',
+            'email' => 'required',
             
         ]);
         $login = new Login;
         $login->username= $request->username;
         $login->password= $request->password;
+        $login->name= $request->name;
+        $login->email= $request->email;
         $login-> save();
 
         return redirect()-> route('save')-> with('success','Usuario creado correctamente');
