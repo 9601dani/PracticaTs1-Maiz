@@ -8,10 +8,19 @@
 <body>
     <div class="contenedor">
         <div class="columna">
-            <form action="/action_page.php" method="post">
+            <form action="{{ route('verificar') }}" method="POST">
                 <div class="imgcontainer">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmMX2Q9c3cTQkVBDXanJSjtKNWXrXWHF1zsg&usqp=CAU">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmMX2Q9c3cTQkVBDXanJSjtKNWXrXWHF1zsg&usqp=CAU">
                 </div>
+                @csrf
+                @if(session('success'))
+                @endif
+                @if(session('no_success'))
+                <h4>Campos Incorrectos</h4>
+                <h4>Intente Nuevamente</h4>
+                @endif
+
 
                 <div class="container">
                     <label for="uname"><b>Username</b></label>
@@ -22,7 +31,9 @@
 
                     <button type="submit">Login</button>
                 </div>
+
             </form>
+
         </div>
     </div>
 </body>

@@ -7,6 +7,7 @@ use App\Models\Login;
 
 class LoginController extends Controller
 {
+
     /**
      * index para mostrar todos los datos
      * store para guardar un nuevo
@@ -14,6 +15,8 @@ class LoginController extends Controller
      * destroy para eliminar
      * edit para mostrar formulario de edicion
      */
+    private static $instance;
+    public static $name_sesion;
 
      public function store(Request $request){
        $validateData= $request->validate([
@@ -35,8 +38,27 @@ class LoginController extends Controller
      }
 
      public function index(){
-      print("entre al metodo index");
       $logins = Login::all();
       return view('admin_create', ['logins'=> $logins]);
      }
+
+     public function verificar(Request $request){
+      $logins = Login::all();
+      foreach($logins as $login){
+        if($login-> username == $request-> user_name){
+          if($login -> password== $request-> pass_user){
+            $name_sesion=$request->user_name;
+            return redirect()-> route('name_admin')-> with('success','Inicio Sesion');
+          }
+        }
+      }
+      return redirect()-> route('verificar')-> with('no_success','Inicio Sesion');
+
+     }
+     public function destroy($id){
+      $login= Login::find($id);
+      $login->delete();
+      return redirect()->route('save')-> with('success','usuario eliminado correctamente');
+  }
+
 }

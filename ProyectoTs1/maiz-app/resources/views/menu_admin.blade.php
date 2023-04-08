@@ -14,7 +14,6 @@
     <nav id="p2">
     <h1> <a href="/">El Maiz</a></h1>
         <ul>
-            <li><a href="/login">Login</a></li>
             <li><a href="/inicio">Mas Info</a></li>
             <li><a href="/contacto">Contacto</a></li>
             <li><a href="">Sobre Pagina</a></li>
@@ -24,4 +23,3 @@
 </header>
 </body>
 </html>
-
