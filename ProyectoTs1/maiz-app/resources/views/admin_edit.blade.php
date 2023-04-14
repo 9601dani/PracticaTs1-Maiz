@@ -1,7 +1,8 @@
-@extends('admin')
-@section('content_admin')
+@extends('menu_admin')
+@section('menu_admin')
+<br><br>
 <div class="contenedor">
-    <form action="{{ route('save_data') }} " method="POST">
+    <form action="{{ route('save_data') }} " method="POST" class="form_low">
         <div>
             @csrf
             @if(session('success'))
@@ -34,35 +35,39 @@
         <div style="text-align:center">
             <button class="button" type="submit"> Añadir Informacion</button>
         </div>
-    </form>
-    @if($datas)
-    <div>
-            <table>
-                <tr>
-                    <th>Departamento</th>
-                    <th>Municipio</th>
-                    <th>Cantidad Producida</th>
-                </tr>
-                @foreach ( $datas as $data )
-                <div>
-                    <a href="{{ route('all_data', ['id'=> $data->id]) }}"></a>
-                    <tr>
-                        <th>{{ $data-> departamento }}</th>
-                        <th>{{ $data-> municipio }}</th>
-                        <th>{{ $data-> cantidad }}</th>
-                        <th>
-                            <form action="{{ route ('data-destroy', [$data-> id]) }}" method="POST">
-                                @method('DELETE')
-                                @csrf
-                                <button class="button" type="submit">eliminar registro</button>
-                            </form>
-                        </th>
-                    </tr>
 
-                </div>
-                @endforeach
-            </table>
-        </div>
-     @endif   
-<div>
+        <br><br>
+    </form>
+    @if(count($datas)>0)
+    <div class="div_table">
+        <table>
+            <tr>
+                <th>Departamento</th>
+                <th>Municipio</th>
+                <th>Cantidad Producida</th>
+            </tr>
+            @foreach ( $datas as $data )
+            <div>
+                <a href="{{ route('all_data', ['id'=> $data->id]) }}"></a>
+                <tr>
+                    <th>{{ $data-> departamento }}</th>
+                    <th>{{ $data-> municipio }}</th>
+                    <th>{{ $data-> cantidad }}</th>
+                    <th>
+                        <form action="{{ route ('data-destroy', [$data-> id]) }}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                            <button class="button" type="submit">eliminar registro</button>
+                        </form>
+                    </th>
+                </tr>
+
+            </div>
+            @endforeach
+        </table>
+    </div>
+    @endif
+    <div>
+</div>       
+<br>
 @endsection

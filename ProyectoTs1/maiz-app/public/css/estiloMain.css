@@ -1,5 +1,5 @@
-#p2 {background-color:hsla(120,100%,75%,0.3);}
-#p3 {background-color:hsla(49, 52%, 68%, 0.3);}
+#p2 {background-color:rgb(156,210,211)}
+#p3 {background-color:rgb(156, 210, 211)}
 #p4 {background-color:cornflowerblue;}
 nav{
     display:flex;
@@ -29,5 +29,27 @@ a:hover{
 }
 body{
     margin: 0%;
-    background-color: #ccc;
+    background-color: rgb(242,230,207);
 }
+.div_table {
+    width: 50%; /* ajusta el ancho del div según tus necesidades */
+    margin: 0 auto; /* establece los márgenes superior e inferior en 0 y el margen izquierdo y derecho en automático para centrar horizontalmente el div */
+  }
+
+.form_mas{
+    width: 40%;
+}
+.form_low{
+    width: 40%;
+    height: 20%;
+}
+.columnas {
+    column-count: 2; /* Divide el contenido en dos columnas */
+    column-gap: 20px; /* Define la separación entre las columnas */
+    width: 100%; /* Define el ancho del contenedor */
+    margin: 0 auto; /* Centra el contenedor */
+  }
+  .mi-video {
+    width: 100%; /* Define el ancho del video */
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+  }

@@ -58,6 +58,7 @@ form {
   /* Add padding to containers */
   .container {
     padding: 15px;
+    background-color: #d8dfd2 ;
   }
   
   /* The "Forgot password" text */
@@ -79,16 +80,17 @@ form {
   .contenedor {
     display: flex;
     justify-content: center;
+    
   }
   .columna{
     padding: 15px;
     margin: 0 5px;
-    background-color: lightgray;
+    background-color: #d8dfd2
   }
   .columna1{
     padding: 15px;
     margin: 0 5px;
-    background-color:#ccc ;
+    background-color: rgb(242,230,207) ;
 
   }
   .button{
@@ -99,4 +101,58 @@ form {
   }
   table, th, td {
     border: 1px solid;
+  }
+  footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    
+  }
+  
+  
+  p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+  }
+  form {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #d8dfd2;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    width: 101%;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  textarea {
+    height: 150px;
+  }
+  
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    white-space: nowrap;
   }

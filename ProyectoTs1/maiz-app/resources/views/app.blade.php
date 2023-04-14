@@ -17,11 +17,17 @@
             <li><a href="/login">Login</a></li>
             <li><a href="/inicio">Mas Info</a></li>
             <li><a href="/contacto">Contacto</a></li>
-            <li><a href="">Sobre Pagina</a></li>
+            <li><a href="/recetas">Mas Sobre Maiz</a></li>
         </ul>
     </nav>
     @yield('content')
 </header>
 </body>
+<footer>
+  <div>
+    <p>Todos los derechos reservados &copy; 2023</p>
+    <p>201930699 Erick Morales</p>
+  </div>
+</footer>
 </html>
 

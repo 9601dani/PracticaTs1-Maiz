@@ -1,9 +1,10 @@
-@extends('admin')
-@section('content_admin')
+@extends('menu_admin')
+@section('menu_admin')
+<br><br>
 <link rel="stylesheet" href="{{ asset('css/login.css') }}">
-<div>
+<div >
     <div class="contenedor">
-        <form action="{{ route('save') }} " method="POST">
+        <form action="{{ route('save') }} " method="POST" class="form_mas">
             <div>
                 @csrf
                 @if(session('success'))
@@ -40,8 +41,10 @@
             <div style="text-align:center">
                 <button class="button" type="submit"> Crear Usuario</button>
             </div>
+            <br>
         </form>
-        <div>
+        @if(count($logins)>0)
+        <div class="div_table">
             <table>
                 <tr>
                     <th>Name User</th>
@@ -69,6 +72,7 @@
             </table>
 
         </div>
+        @endif
     </div>
 </div>
 @endsection

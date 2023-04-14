@@ -9,7 +9,7 @@
     muy rico en vitaminas y minerales </h4>
 <div class="contenedor">
     <div>
-        <img src="https://imagenes.elpais.com/resizer/kbvalzpYXPC9MexELdqm3kRlDVY=/1960x0/cloudfront-eu-central-1.images.arcpublishing.com/prisa/B5ENCHNJQNCQDNQTFVK4D2PGBU.jpg"
+        <img src="{{ asset('img/img_welcome.jpg')}}"
             width="1000" height="350">
     </div>
 </div>
@@ -42,13 +42,13 @@
             </div>
         </div>
         <div style="text-align:center">
-            <img src="https://www.guatemala.com/fotos/2020/11/Conoce-los-distintos-colores-de-tortillas-que-hay-en-Guatemala2.jpg"
+            <img src="{{ asset('img/img_type_maiz.jpg')}}"
                 width="350" height="350">
         </div>
         <br><br>
         <h3 style="text-align:center" > Presentando Datos</h3>
-        @if($datas)
-        <div style="text-align:center">
+        @if(count($datas)>0)
+        <div class="div_table">
             <table>
                 <tr>
                     <th>Departamento</th>
@@ -81,7 +81,7 @@
             </h4>
         </div>
         <div style="text-align:center">
-            <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Folimpia.cuautitlan2.unam.mx%2Fsemillas%2Fimages%2FCereales%2Fmaiz.jpg&f=1&nofb=1&ipt=36666d080bfadaa296c9f7d5131aba583e0f40301392dfceffa2cee30b2bbab2&ipo=images"
+            <img src="{{ asset('img/estruc_maiz.jpg')}}"
                 width="350" height="350">
         </div>
         <div style="text-align:justify">

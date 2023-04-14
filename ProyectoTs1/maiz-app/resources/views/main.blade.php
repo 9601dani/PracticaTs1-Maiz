@@ -73,8 +73,7 @@
         <div class="contenedor">
             <div class="columna1">
                 <h2> Etapas de la produccion del maiz</h2>
-                <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fciclodevida.net%2Fwp-content%2Fuploads%2F2019%2F02%2Fciclo-de-vida-del-maiz.jpg&f=1&nofb=1&ipt=6740c539841861f4789417b5241ee8c253317c003c05f4eacd7dcecd0f01eb07&ipo=images"
-                    width="650" height="550">
+                <img src="{{ asset('img/main_maiz.jpg')}}" width="650" height="550">
                 <div>
                     <br>
                     <div style="text-align:justify">
@@ -107,12 +106,22 @@
                     drenaje es primordial, sobre todo en zonas templadas y en suelos más pesados.
                 </div>
                 <br>
+                <div style="text-align:center">
+                    <img src="{{ asset('img/riego_maiz.jpg')}}" width="175" height="75"
+                     alt="Avatar">
+                </div>
+                <br>
                 <div style="text-align:justify">
                     <br>
                     Después de la germinación, se define cada etapa de desarrollo de las hojas conforme
                     la hoja superior cuyo cuello esté visible. No obstante, desde aproximadamente V6 en
                     adelante, las hojas más abajo pueden marchitar y caerse de la planta, y entonces en
                     esa etapa es importante contar el número de cuellos visibles en el tallo.
+                </div>
+                <br>
+                <div style="text-align:center">
+                    <img src="{{ asset('img/tallo_maiz.jpg')}}" width="220" height="95"
+                     alt="Avatar">
                 </div>
                 <br>
                 <div style="text-align:justify">
@@ -124,9 +133,9 @@
                 </div>
                 <div>
                     <h3 style="text-align:center"> Presentando Datos</h3>
-                    @if($datas)
-                    <div style="text-align:center">
-                        <table>
+                    @if(count($datas)>0)
+                    <div class="div_table">
+                        <table style="text-align:center">
                             <tr>
                                 <th>Departamento</th>
                                 <th>Municipio</th>
@@ -144,6 +153,11 @@
                             </div>
                             @endforeach
                         </table>
+                        <br>
+                            <h4 style="text-align: justify">
+                                Los siguientes datos es un promedio de datos recolectados por <br>
+                                las personas que hemos realizado la pagina.
+                            </h4>
                     </div>
                     @endif
                 </div>

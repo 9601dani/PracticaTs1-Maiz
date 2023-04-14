@@ -1,17 +1,41 @@
 @extends('menu_admin')
-@section('content')
+@section('menu_admin')
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/estiloMain.css') }}">
 </head>
-<div>
-    <nav id="p4">
-    <h1> <a href="/admin">Bienvenido</a></h1>
-        <ul>
-            <li><a href="/admin_create">Crear Usuario</a></li>
-            <li><a href="/admin_edit">Ingresar Info Maiz</a></li>
-            <li><a href="/">Cerrar Sesion</a></li>
-        </ul>
-    </nav>
-    @yield('content_admin')
-</div>
+
+<body>
+    
+    @if(count($comments)>0)
+    
+    <div class="div_table">
+        <h4>Presentamos los comentarios/contacto solicitado por usuarios</h4>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Descripcion</th>
+            </tr>
+            @foreach ( $comments as $comment )
+            <div>
+                <a href="{{ route('edit_comment', ['name'=> $comment->name]) }}"></a>
+                <tr>
+                    <th>{{ $comment-> name }}</th>
+                    <th>{{ $comment-> email }}</th>
+                    <th>{{ $comment-> comment }}</th>
+                </tr>
+
+            </div>
+            @endforeach
+        </table>
+
+    </div>
+    @endif
+</body>
+</html>
+<br><br><br>
 @endsection
